@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="630" pageHeight="815" columnWidth="590" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="33c4d9b7-210a-4209-ba09-3ad135837feb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="tel_1" class="java.lang.String"/>
+	<field name="email_1" class="java.lang.String"/>
+	<field name="saldo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<image>
+				<reportElement x="30" y="-16" width="172" height="83" uuid="3b67f1c9-5e2e-4bca-897e-6a7e1e44dd15"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Pictures\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="237" y="18" width="315" height="49" uuid="f0235bf0-1124-4bc5-8536-2862c8c0d762"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de Clientes]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="490" y="0" width="100" height="20" uuid="9f9e654b-e912-4212-8fa1-08ad4eea5306"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="62">
+			<staticText>
+				<reportElement x="12" y="2" width="100" height="20" uuid="eff7a3a2-a45f-4b1a-b805-a7fabb3c46a8"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="0" width="80" height="20" uuid="d0f613a5-bbde-409b-852e-59a37f54e548"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CEDULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="3" width="56" height="20" uuid="d506c5dd-de0d-4483-a4d6-ac37a8f8fabe"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="77" height="20" uuid="4163956b-99a8-4720-ad61-96008286093b"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="447" y="2" width="62" height="20" uuid="6238402c-911f-446e-a8ce-e92e4a9ba94a"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="2" width="49" height="20" uuid="244e7f60-960a-46ee-a878-44f1e24a95e2"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="179" height="20" uuid="159ba15b-c4ce-4743-a1ca-a82296c7d43c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="2" width="83" height="20" uuid="e4c6efa2-c486-49f5-a5df-b0bf12c1c05e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="2" width="88" height="20" uuid="264bfd23-a0e5-4125-87a2-84ac19760466"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="2" width="77" height="20" uuid="08de6345-f816-490c-a1d1-6481e7aea69c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tel_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="2" width="92" height="20" uuid="0d43dabc-eeec-49b0-a6a7-4f7b1017f38e"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="519" y="2" width="71" height="20" uuid="2845d969-15b1-4c52-8727-8d8e5ab96089"/>
+				<textFieldExpression><![CDATA[$F{saldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="270" y="10" width="80" height="20" uuid="2b34d200-51a0-4f06-bc77-c633928a2fc6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="350" y="10" width="40" height="20" uuid="4539c358-f4c7-47c9-a608-6edf9a9caa38"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0e1f189-9be8-45f3-aba4-0b9e4419e184">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     kardex."referencia" AS kardex_referencia,
+     kardex."descrip_kar" AS kardex_descrip_kar,
+     kardex."precio1" AS kardex_precio1,
+     kardex."precio2" AS kardex_precio2,
+     kardex."precio3" AS kardex_precio3,
+     kardex."ult_costo" AS kardex_ult_costo,
+     kardex."activo_kar" AS kardex_activo_kar
+FROM
+     "dbo"."kardex" kardex WHERE kardex."activo_kar"=1 ORDER BY kardex_descrip_kar]]>
+	</queryString>
+	<field name="kardex_referencia" class="java.lang.String"/>
+	<field name="kardex_descrip_kar" class="java.lang.String"/>
+	<field name="kardex_precio1" class="java.math.BigDecimal"/>
+	<field name="kardex_precio2" class="java.math.BigDecimal"/>
+	<field name="kardex_precio3" class="java.math.BigDecimal"/>
+	<field name="kardex_ult_costo" class="java.math.BigDecimal"/>
+	<field name="kardex_activo_kar" class="java.lang.Boolean"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="218" y="12" width="212" height="47" backcolor="#99FFCC" uuid="0c3e3bac-f013-4574-ae80-90067f064ff1"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LISTA"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="ec6018b4-f9ec-4f80-9a41-f170a4e4b0df"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="0" width="256" height="20" uuid="ab29cd5f-284f-4b5d-aeca-3a70bb3cf9eb"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="0" width="100" height="20" uuid="752f0d63-24c3-4bfd-a782-a7eedd7efe6c"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="db474579-82c5-4c0b-bb90-becd07ec55ba"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTADO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="bf765468-c853-4df8-a96a-f32ac825808d"/>
+				<textFieldExpression><![CDATA[$F{kardex_referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="255" height="20" uuid="5e178196-eff2-4ae2-aab5-643f1edbdb5a"/>
+				<textFieldExpression><![CDATA[$F{kardex_descrip_kar}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(#,##0)">
+				<reportElement x="355" y="0" width="100" height="20" uuid="61ba0e42-35ff-4599-b34a-d1366c35aad5"/>
+				<textFieldExpression><![CDATA[$F{kardex_precio1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(#,##0)">
+				<reportElement x="455" y="0" width="100" height="20" uuid="7875d3d7-b1db-49c1-bf0b-ff306e6774fb"/>
+				<textFieldExpression><![CDATA[$F{kardex_precio3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="255" y="13" width="100" height="20" uuid="c25cfabe-2e1f-4c6c-84ea-bcac650a9eb0"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
